@@ -5,7 +5,7 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kiborroq <kiborroq@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/10/31 11:14:47 by gagustin          #+#    #+#              #
+#    Created: 2020/10/31 11:14:47 by kiborroq          #+#    #+#              #
 #    Updated: 2020/11/02 16:57:10 by kiborroq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
@@ -19,7 +19,7 @@ SRCS		= ft_memset.c\
 			ft_memcmp.c\
 			ft_strlen.c\
 			ft_strdup.c\
-			ft_strndup.c\
+			ft_strndup.c \
 			ft_strlcat.c\
 			ft_strchr.c\
 			ft_strrchr.c\
@@ -31,6 +31,7 @@ SRCS		= ft_memset.c\
 			ft_isalnum.c\
 			ft_isascii.c\
 			ft_isprint.c\
+			ft_isspace.c \
 			ft_toupper.c\
 			ft_tolower.c\
 			ft_substr.c\
@@ -38,8 +39,8 @@ SRCS		= ft_memset.c\
 			ft_strtrim.c\
 			ft_split.c\
 			ft_itoa.c\
-			ft_itoa_base.c\
-			ft_uitoa.c\
+			ft_itoa_base.c \
+			ft_uitoa.c \
 			ft_putchar_fd.c\
 			ft_putstr_fd.c\
 			ft_putendl_fd.c\
@@ -63,17 +64,15 @@ CC			= gcc
 CFLAGS		= -Werror -Wextra -Wall
 
 .c.o :
-			@${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
 
 ${NAME} : 	${OBJS}
-			@echo Create ${NAME}
-			@ar rc ${NAME} ${OBJS}
-			@ranlib ${NAME}
+			ar rc ${NAME} ${OBJS}
+			ranlib ${NAME}
 
 bonus:		${OBJS} ${OBJS_B}
-			@echo Create ${NAME}
-			@ar rc ${NAME} ${OBJS}  ${OBJS_B}
-			@ranlib ${NAME}
+			ar rc ${NAME} ${OBJS}  ${OBJS_B}
+			ranlib ${NAME}
 
 so :		
 			${CC} -shared -o libft.so ${OBJS}
@@ -81,12 +80,11 @@ so :
 all :		${NAME}
 
 clean :
-			@rm -f ${OBJS} ${OBJS_B}
+			rm -f ${OBJS} ${OBJS_B}
 
 fclean : 	clean
-			@echo Remove ${NAME}
-			@rm -f ${NAME}
-			@rm -f libft.so
+			rm -f ${NAME}
+			rm -f libft.so
 
 re : 		fclean all
 

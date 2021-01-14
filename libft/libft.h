@@ -6,7 +6,7 @@
 /*   By: kiborroq <kiborroq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 11:08:03 by kiborroq          #+#    #+#             */
-/*   Updated: 2020/11/17 16:47:12 by kiborroq         ###   ########.fr       */
+/*   Updated: 2021/01/14 09:21:13 by kiborroq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ typedef struct		s_list
 **Part 1 - Libc functions
 */
 
-void				*ft_memset(void *buf, int ch, size_t n);
-void				ft_bzero(void *buf, size_t n);
+void				*ft_memset(void *mem, int ch, size_t n);
+void				ft_bzero(void *mem, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int ch, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
-void				*ft_memchr(const void *buf, int ch, size_t n);
-int					ft_memcmp(const void *buf1, const void *buf2, size_t n);
+void				*ft_memchr(const void *mem, int ch, size_t n);
+int					ft_memcmp(const void *mem1, const void *mem2, size_t n);
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dest, const char *src, size_t dest_size);
 size_t				ft_strlcat(char *dest, const char *src, size_t dest_size);
@@ -55,6 +55,7 @@ int					ft_isdigit(int ch);
 int					ft_isalnum(int ch);
 int					ft_isascii(int ch);
 int					ft_isprint(int ch);
+int					ft_isspace(int ch);
 int					ft_toupper(int ch);
 int					ft_tolower(int ch);
 void				*ft_calloc(size_t nmemb, size_t size);

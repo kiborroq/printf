@@ -6,7 +6,7 @@
 /*   By: kiborroq <kiborroq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:32:02 by kiborroq          #+#    #+#             */
-/*   Updated: 2020/11/12 13:34:59 by kiborroq         ###   ########.fr       */
+/*   Updated: 2020/12/17 13:32:38 by kiborroq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		s1_len;
-	int		s2_len;
+	size_t	s1_len;
+	size_t	s2_len;
 	char	*concat;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2)
 		return (0);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);

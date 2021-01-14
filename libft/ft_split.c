@@ -6,7 +6,7 @@
 /*   By: kiborroq <kiborroq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:51:47 by kiborroq          #+#    #+#             */
-/*   Updated: 2020/11/12 15:05:58 by kiborroq         ###   ########.fr       */
+/*   Updated: 2020/12/17 14:09:11 by kiborroq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ static char			*fill_word(char *s, char c)
 	return (word);
 }
 
-static void			free_strs(char **strs)
+static void			free_strs(char **strs, unsigned int n)
 {
 	size_t i;
 
 	i = 0;
-	while (strs[i])
+	while (i < n)
 	{
 		free(strs[i]);
 		i++;
@@ -73,7 +73,7 @@ char				**fill_strs(char **strs, char *s, char c,
 		strs[j] = fill_word(&s[i], c);
 		if (!strs[j])
 		{
-			free_strs(strs);
+			free_strs(strs, j);
 			return (0);
 		}
 		if (s[i])

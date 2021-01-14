@@ -6,13 +6,13 @@
 /*   By: kiborroq <kiborroq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 16:17:16 by kiborroq          #+#    #+#             */
-/*   Updated: 2020/11/02 16:17:46 by kiborroq         ###   ########.fr       */
+/*   Updated: 2020/12/17 12:04:10 by kiborroq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int ch)
 {
-	if (ch > -1 && ch < 128)
+	if (ch >= 0 && ch <= 127)
 		return (1);
 	return (0);
 }
